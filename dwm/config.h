@@ -76,6 +76,8 @@ static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
 
+static const char *upbrigh[] = { "xrandr", "--output", "eDP-1", "--brightness", "0.1%+", NULL};
+
 // open browser
 static const char *browser[] = {"brave-browser", NULL};
 // poweroff
@@ -118,6 +120,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F3,     spawn,          {.v = upvol   } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = downvol } },
 	{ MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
+	{ MODKEY,			XK_F6,	spawn, 		{.v = upbrigh} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
